@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <p>name: <%= user.name %></p>
+    <p>email: <%= user.email %></p>
+    <h2>Your Orders</h2>
+    <% if (orders && orders.length > 0) { %>
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>Item</th>
+                <th>Quantity (kg)</th>
+                <th>Ordered At</th>
+            </tr>
+            <% orders.forEach(order => { %>
+                <tr>
+                    <td><%= order.item %></td>
+                    <td><%= order.quantity %></td>
+                    <td><%= order.orderedAt.toLocaleString() %></td>
+                </tr>
+            <% }) %>
+        </table>
+    <% } else { %>
+        <p>You have not placed any orders yet.</p>
+    <% } %>
+</body>
+</html>

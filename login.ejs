@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css"> <!-- ✅ correct path -->
+</head>
+<script>
+  // Auto-hide flash messages after 4 seconds
+  setTimeout(function () {
+    const flashSuccess = document.querySelector('.flash-success');
+    const flashError = document.querySelector('.flash-error');
+
+    if (flashSuccess) {
+      flashSuccess.style.transition = "opacity 0.5s";
+      flashSuccess.style.opacity = 0;
+      setTimeout(() => flashSuccess.remove(), 500); // remove from DOM
+    }
+
+    if (flashError) {
+      flashError.style.transition = "opacity 0.5s";
+      flashError.style.opacity = 0;
+      setTimeout(() => flashError.remove(), 500);
+    }
+  }, 1000); // 4000ms = 4 seconds
+</script>
+
+<body>
+    <h1>Login</h1>
+
+    <% if (success_msg && success_msg.length > 0) { %>
+      <div class="flash-success"><%= success_msg %></div>
+    <% } %>
+
+    <% if (error_msg && error_msg.length > 0) { %>
+      <div class="flash-error"><%= error_msg %></div>
+    <% } %>
+
+    <div class="form-container">
+        <form action="/login" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <p>Don't Have an Account Yet?</p><br>
+            <a href='/register'>Register Here</a><br>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>

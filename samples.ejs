@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kammavaripalem Village Farming</title>
+  <link rel="stylesheet" href="/style.css"> <!-- Make sure this path is correct -->
+</head>
+<script>
+  // Auto-hide flash messages after 4 seconds
+  setTimeout(function () {
+    const flashSuccess = document.querySelector('.flash-success');
+    const flashError = document.querySelector('.flash-error');
+
+    if (flashSuccess) {
+      flashSuccess.style.transition = "opacity 0.5s";
+      flashSuccess.style.opacity = 0;
+      setTimeout(() => flashSuccess.remove(), 500); // remove from DOM
+    }
+
+    if (flashError) {
+      flashError.style.transition = "opacity 0.5s";
+      flashError.style.opacity = 0;
+      setTimeout(() => flashError.remove(), 500);
+    }
+  }, 2000); // 4000ms = 4 seconds
+</script>
+
+<body>
+
+  <!-- Navigation Links -->
+  <div class="top-nav">
+    <a href="/profile">Profile</a>
+    <li><a href="/admin-register">Admin</a></li>
+    <a href="/logout">Logout</a>
+  </div>
+
+  <!-- Page Title -->
+  <h1>Kammavaripalem Village Farming</h1>
+  <% if(success_msg && success_msg.length>0){%>
+    <div class="flash-success"><%= success_msg%></div>
+
+  <%}%>
+  <% if(error_msg && error_msg.length>0){%>
+    <div class="flash-error"><%= error_msg%></div>
+
+  <%}%>
+
+  <!-- Order Form -->
+  <div class="form-box">
+    <form action="/order" method="POST">
+      <label for="item">Select Item (Fruit/Vegetable):</label>
+      <select name="item" id="item" required>
+        <optgroup label="Fruits">
+          <option value="Mango">Mango</option>
+          <option value="Banana">Banana</option>
+          <option value="Papaya">Papaya</option>
+        </optgroup>
+        <optgroup label="Vegetables">
+          <option value="Tomato">Tomato</option>
+          <option value="Brinjal">Brinjal</option>
+          <option value="Beans">Beans</option>
+        </optgroup>
+      </select>
+
+      <label for="quantity">How many kg do you want?</label>
+      <input type="number" name="quantity" id="quantity" min="1" required>
+
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+
+</body>
+</html>

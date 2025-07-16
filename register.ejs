@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+  // Auto-hide flash messages after 4 seconds
+  setTimeout(function () {
+    const flashSuccess = document.querySelector('.flash-success');
+    const flashError = document.querySelector('.flash-error');
+
+    if (flashSuccess) {
+      flashSuccess.style.transition = "opacity 0.5s";
+      flashSuccess.style.opacity = 0;
+      setTimeout(() => flashSuccess.remove(), 500); // remove from DOM
+    }
+
+    if (flashError) {
+      flashError.style.transition = "opacity 0.5s";
+      flashError.style.opacity = 0;
+      setTimeout(() => flashError.remove(), 500);
+    }
+  }, 2000); // 4000ms = 4 seconds
+</script>
+
+<body>
+
+    <h1>Register</h1>
+    <% if (success_msg && success_msg.length > 0) { %>
+  <div class="flash-success"><%= success_msg %></div>
+<% } %>
+
+<% if (error_msg && error_msg.length > 0) { %>
+  <div class="flash-error"><%= error_msg %></div>
+<% } %>
+
+
+
+    <form action="/register" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <p>Already have an account?<a href='/login'>Login here</a></p>
+
+        <input type="submit" value="Register">
+    </form>
+
+</body>
+</html>

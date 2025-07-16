@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 40px;
+    }
+    .form-container {
+      background: white;
+      padding: 30px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #28a745;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+    .message {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .success {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .error {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Admin Registration</h2>
+
+    <% if (typeof success_msg !== "undefined" && success_msg.length > 0) { %>
+  <div class="message success"><%= success_msg %></div>
+<% } %>
+
+<% if (typeof error_msg !== "undefined" && error_msg.length > 0) { %>
+  <div class="message error"><%= error_msg %></div>
+<% } %>
+
+
+    <form action="/admin-register" method="POST">
+      <label>Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Email:</label>
+      <input type="email" name="email" required>
+
+      <label>Password:</label>
+      <input type="password" name="password" required>
+
+      <label>Admin Secret Code:</label>
+      <input type="text" name="adminSecret" placeholder="Enter admin code" required>
+
+      <button type="submit">Register as Admin</button>
+    </form>
+
+    <br>
+    <a href="/login">Back to Login</a>
+  </div>
+
+</body>
+</html>
