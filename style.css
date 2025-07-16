@@ -1,0 +1,213 @@
+/* Page background and text */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9; /* light green */
+    margin: 0;
+    padding: 0;
+    color: #1b5e20; /* dark green text */
+}
+
+/* Header Title */
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #2e7d32; /* dark green */
+    color: white;
+    margin: 0;
+}
+
+/* Navigation bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    background-color: transparent; /* ✅ removes green background */
+    box-shadow: none;              /* ✅ remove any shadow */
+    border: none;                  /* ✅ no border */
+}
+
+
+ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+ul li a {
+    text-decoration: none;
+    color:red;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 12px;
+}
+
+ul li a:hover {
+    background-color: #cddc39; /* yellow-green */
+    color: #1b5e20;
+    border-radius: 5px;
+}
+
+/* Subheading */
+h3 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 22px;
+    color: #33691e;
+}
+.center-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* Controls vertical space */
+}
+
+.center-text h3 {
+    font-size: 24px;
+    color: #2e7d32;
+    text-align: center;
+}
+.form-container {
+    width: 350px;
+    margin: 50px auto; /* center horizontally */
+    padding: 25px;
+    background-color: white; /* ✅ white background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ✅ subtle shadow */
+}
+
+form input[type="email"],
+form input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form input[type="submit"] {
+    background-color: #2e7d32;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #1b5e20;
+}
+.top-nav {
+  background-color: #2e7d32;
+  padding: 12px 25px;
+  text-align: right;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+ body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e8f5e9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #2e7d32;
+      padding: 15px 30px;
+      text-align: right;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      padding: 8px 16px;
+      background-color: #388e3c;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #66bb6a;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #1b5e20;
+    }
+
+    .form-box {
+      max-width: 400px;
+      background: white;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    label {
+      font-size: 16px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    select,
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    button {
+      background-color: #43a047;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+    }
+    .flash-success {
+    background-color: #28a745; /* Bootstrap green */
+    color: white;
+    padding: 10px;
+    max-width:300px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #218838;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.flash-error {
+    background-color: #dc3545; /* Bootstrap red */
+    color: white;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    max-width:300px;
+    border: 1px solid #c82333;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
